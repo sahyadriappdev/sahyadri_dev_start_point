@@ -13,3 +13,4 @@ jobs:
           echo "Runner is working 🚀"
           hostname
           whoami
+          uname -r
