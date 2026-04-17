@@ -1,0 +1,15 @@
+name: Test Self Hosted Runner
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Check runner
+        run: |
+          echo "Runner is working 🚀"
+          hostname
+          whoami
