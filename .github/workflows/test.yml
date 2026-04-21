@@ -14,3 +14,4 @@ jobs:
           hostname
           whoami
           uname -r
+          df -h
