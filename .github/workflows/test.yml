@@ -1,7 +1,7 @@
 name: Test Self Hosted Runner
 
 on:
-  push:
+  workflow_disatch:
 
 jobs:
   test:
