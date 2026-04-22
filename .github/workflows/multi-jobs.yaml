@@ -1,0 +1,50 @@
+name: action upload artifacts
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Install cowsay
+        run: sudo apt-get update && sudo apt-get install cowsay -y
+
+      - name: Create dragon file
+        run: cowsay -f dragon "run dragon" > dragon.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dragon-file
+          path: dragon.txt
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon-file
+
+      - name: Check file
+        run: grep -i "dragon" dragon.txt
+
+  deploy:
+    needs: test
+    runs-on: self-hosted
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon-file
+
+      - name: Check file
+        run: grep -i "dragon" dragon.txt
+
+      - name: Read file
+        run: cat dragon.txt
