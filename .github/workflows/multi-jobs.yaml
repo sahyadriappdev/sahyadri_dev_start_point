@@ -2,6 +2,8 @@ name: action upload artifacts
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   build:
