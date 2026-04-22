@@ -1,11 +1,11 @@
 name: Test Kubernetes Access
 
 on:
-workflow_dispatch:
+ workflow_dispatch:
 
 jobs:
-test:
-runs-on: self-hosted
+ test:
+ runs-on: self-hosted
 
 steps:
   - name: Set KUBECONFIG
