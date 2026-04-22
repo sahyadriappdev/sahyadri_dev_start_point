@@ -1,8 +1,8 @@
 name: My first and very basic workflow
 
 #on: push # this is called trigger 
-on: [push]
-
+on: 
+ workflow_dispatch:
 jobs: 
     first_job:
         runs-on: self-hosted
