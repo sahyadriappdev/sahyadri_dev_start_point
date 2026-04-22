@@ -15,8 +15,8 @@ jobs:
         - name: list files
           run: ls
 
-            #        - name: Read files
-            #          run: cat README.md
+        - name: Read files
+          run: cat README.md
 
         - name: list the disk space
           run: df -h
