@@ -15,4 +15,3 @@ steps:
 
   - name: Check cluster
     run: kubectl get nodes
-
