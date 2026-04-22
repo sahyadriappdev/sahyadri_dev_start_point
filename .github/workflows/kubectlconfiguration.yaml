@@ -6,13 +6,13 @@ on:
 jobs:
    test:
    runs-on: self-hosted
-    steps:
-     - name: Set KUBECONFIG
-       run: |
-            mkdir -p $HOME/.kube
-            echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
+     steps:
+      - name: Set KUBECONFIG
+        run: |
+              mkdir -p $HOME/.kube
+              echo "${{ secrets.KUBECONFIG }}" > $HOME/.kube/config
 
 
-  - name: Check cluster
-    run: kubectl get nodes
+     - name: Check cluster
+       run: kubectl get nodes
 
