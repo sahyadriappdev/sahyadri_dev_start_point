@@ -1,0 +1,14 @@
+on:
+  schedule:
+    - cron: "*/2 * * * *"
+      #  workflow_dispatch:   # optional (manual trigger)
+
+jobs:
+  scheduled_job:
+    runs-on: self-hosted
+
+    steps:
+      - name: Print message
+        run: |
+          echo "Scheduled job is running 🚀"
+          date
