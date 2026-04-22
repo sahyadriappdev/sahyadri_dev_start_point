@@ -7,6 +7,8 @@ jobs:
     first_job:
         runs-on: self-hosted
         steps:
+        - name: testing chekout repo with checkout action
+          uses: actions/checkout@v6
         - name: welcome to the github-actions
           run: echo "my first github actions job"
 
